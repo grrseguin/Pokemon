@@ -1,0 +1,36 @@
+<table>
+  <thead>
+    <tr>
+      <td>J'ai!</td>
+      <td>N°</td>
+      <td>Image</td>
+      <td>Nom</td>
+      <td>Type</td>
+      <td>Attaque</td>
+      <td>Attaque spéciale</td>
+      <td>Défense</td>
+      <td>Défense spéciale</td>
+      <td>Vitesse</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat=" pokemon in poke.list">
+      <td>
+        <input type="checkbox" />
+      </td>
+      <td ng-bind="pokemon.id"></td>
+      <td>
+        <img ng-src="http://pokedex.p-pokemon.com/{{ pokemon.image }}" />
+      </td>
+      <td ng-bind="pokemon.name.fr"></td>
+      <td>
+        <div ng-repeat="typ in pokemon.typList" ng-bind="typ.name"></div>
+      </td>
+      <td ng-bind="pokemon.attack"></td>
+      <td ng-bind="pokemon.specialAttack"></td>
+      <td ng-bind="pokemon.defense"></td>
+      <td ng-bind="pokemon.specialDefense"></td>
+      <td ng-bind="pokemon.speed"></td>
+    </tr>
+  </tbody>
+</table>
